@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Pluton Company — Shield &amp; NEAT</title>
+  <meta name="description" content="The Pluton Company builds Pluton Shield, a system-wide ad and tracker blocker for Windows, and NEAT, a lightweight Windows browser with a built-in blocker, fingerprint protection and password vault.">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0f0f11">
+  <meta property="og:title" content="The Pluton Company — Shield &amp; NEAT">
+  <meta property="og:description" content="Take the web back from the trackers. Pluton Shield blocks ads and trackers across Windows. NEAT is a lightweight browser built around privacy.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/favicon-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Runs before first paint so the saved theme is applied without a flash. -->
+  <script src="js/app.js"></script>
+</head>
+<body>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="neatBase" cx=".35" cy=".55" r=".78">
+        <stop offset="0" stop-color="#00f6f0"/>
+        <stop offset=".55" stop-color="#08e8ee"/>
+        <stop offset="1" stop-color="#04a8ee"/>
+      </radialGradient>
+      <linearGradient id="neatGreen" x1="0" y1="0" x2="0" y2="1">
+        <stop offset=".45" stop-color="#32f38b" stop-opacity="0"/>
+        <stop offset="1" stop-color="#32f38b"/>
+      </linearGradient>
+      <linearGradient id="padGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#04a8ee"/>
+        <stop offset=".5" stop-color="#00f0f0"/>
+        <stop offset="1" stop-color="#32f38b"/>
+      </linearGradient>
+    </defs>
+    <symbol id="i-chev" viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 16 16"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="square"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 16 16"><path d="M2 3h12v8H2zM6 14h4M8 11v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 16 16"><path d="M5 8a3 3 0 1 0 6 0 3 3 0 0 0-6 0zM8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M13 3l-1.4 1.4M4.4 11.6L3 13" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 16 16"><path d="M13.5 9.5A6 6 0 0 1 6.5 2.5a6 6 0 1 0 7 7z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <!-- The stepped-corner shape that runs through the whole brand -->
+    <symbol id="i-stair" viewBox="0 0 16 16"><path d="M0 0H16V16H8V11.5H4.5V8H0Z" fill="currentColor"/></symbol>
+    <!-- NEAT mark, redrawn as vector -->
+    <symbol id="neat-mark" viewBox="0 0 64 64">
+      <path d="M0 32A32 32 0 1 1 32 64L32 46L18 46L18 32Z" fill="url(#neatBase)"/>
+      <path d="M0 32A32 32 0 1 1 32 64L32 46L18 46L18 32Z" fill="url(#neatGreen)"/>
+    </symbol>
+  </svg>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <a class="nav__brand" href="#top" aria-label="The Pluton Company, home">
+      <img class="mark" src="assets/pluton-mark.png" width="28" height="28" alt="">
+      <span>Pluton</span>
+    </a>
+
+    <nav class="nav__links" id="nav-links" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#products">Products</a>
+      <a href="#open-source">Open source</a>
+    </nav>
+
+    <div class="nav__right">
+      <a class="nav__cell" href="https://github.com/plutonlabs" target="_blank" rel="noopener">GitHub</a>
+      <a class="nav__cell nav__cell--cta" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download Shield</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="hero__arc" aria-hidden="true"></div>
+      <div class="hero__rail hero__rail--l" aria-hidden="true"></div>
+      <div class="hero__rail hero__rail--r" aria-hidden="true"></div>
+
+      <div class="hero__copy">
+        <h1 class="display" id="hero-title">Take the web back<br>from the trackers.</h1>
+      </div>
+
+      <div class="stage" id="stage" aria-hidden="true">
+        <div class="stage__probe"></div>
+        <!-- static blocks -->
+        <div class="blk blk--l1"></div>
+        <div class="blk blk--l2"></div>
+        <div class="blk blk--l3"></div>
+        <div class="blk blk--r1"></div>
+        <div class="blk blk--r2"></div>
+        <div class="blk blk--r3"></div>
+        <!-- moving blocks (positioned by js/app.js) -->
+        <div class="mv mv--a" data-mv="a"></div>
+        <div class="mv mv--b" data-mv="b"></div>
+        <div class="mv mv--bar" data-mv="bar"></div>
+        <div class="mv mv--d" data-mv="d"></div>
+      </div>
+
+      <a class="pill" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">
+        <span class="pill__icon"><img src="assets/neat-icon.png" width="22" height="22" alt=""></span>
+        <span>Pluton Shield v0.3 is out. Get it for Windows.</span>
+        <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-chev"/></svg>
+      </a>
+    </section>
+
+    <!-- ============ AT A GLANCE ============ -->
+    <section class="strip" aria-label="At a glance">
+      <ul class="strip__row">
+        <li class="strip__cell">
+          <span class="strip__big">adblock-rust</span>
+          <span class="strip__cap">Brave’s blocking engine, built as a native library</span>
+        </li>
+        <li class="strip__cell">
+          <span class="strip__big">~70 lists</span>
+          <span class="strip__cap">EasyList, uBlock, AdGuard and regional lists</span>
+        </li>
+        <li class="strip__cell">
+          <span class="strip__big">6 h</span>
+          <span class="strip__cap">Filter refresh, hash-checked, no restart</span>
+        </li>
+        <li class="strip__cell">
+          <span class="strip__big">AES-256-GCM</span>
+          <span class="strip__cap">How NEAT seals its password vault</span>
+        </li>
+        <li class="strip__cell">
+          <span class="strip__big">GPL-3.0</span>
+          <span class="strip__cap">NEAT is open source</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+      <svg class="manifesto__lines" viewBox="0 0 1280 560" preserveAspectRatio="none" aria-hidden="true">
+        <g fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M0 120L560 400"/>
+          <path d="M0 210L330 300"/>
+          <path d="M0 300L220 372"/>
+          <path d="M0 360L440 270"/>
+          <path d="M0 470L450 400"/>
+          <path d="M0 520L450 430"/>
+          <path d="M700 210L1280 100"/>
+          <path d="M840 240L1280 190"/>
+          <path d="M1010 260L1280 330"/>
+          <path d="M1090 330L1280 360"/>
+          <path d="M920 400L1280 470"/>
+          <path d="M1080 440L1280 560"/>
+        </g>
+      </svg>
+
+      <h2 class="display display--md" id="manifesto-title">No one else should hold the strings to your</h2>
+
+      <ul class="chips">
+        <li class="chips__row">
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Cookies</span>
+          <span class="chip chip--lit"><i class="chip__ico" aria-hidden="true"></i>Browsing history</span>
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Search habits</span>
+        </li>
+        <li class="chips__row">
+          <span class="chip chip--lit"><i class="chip__ico" aria-hidden="true"></i>Passwords</span>
+          <span class="chip chip--lit"><i class="chip__ico" aria-hidden="true"></i>Fingerprint</span>
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Location hints</span>
+        </li>
+        <li class="chips__row">
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Reading time</span>
+          <span class="chip chip--lit"><i class="chip__ico" aria-hidden="true"></i>Attention</span>
+          <span class="chip chip--lit"><i class="chip__ico" aria-hidden="true"></i>Identity</span>
+        </li>
+        <li class="chips__row">
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Devices</span>
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Click trails</span>
+          <span class="chip"><i class="chip__ico" aria-hidden="true"></i>Bandwidth</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ FEATURES (tabs) ============ -->
+    <section class="how" id="features" aria-labelledby="how-title">
+      <div class="how__head">
+        <h2 class="display display--md" id="how-title">Pluton lets you decide what the web gets to see.</h2>
+      </div>
+
+      <div class="tabs" data-tabs>
+        <div class="tabs__list" role="tablist" aria-orientation="vertical" aria-label="Features">
+          <button class="tab" role="tab" type="button" id="tab-system" aria-controls="panel-system" aria-selected="true">
+            <span>System-wide blocking</span><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+          <button class="tab" role="tab" type="button" id="tab-blocker" aria-controls="panel-blocker" aria-selected="false" tabindex="-1">
+            <span>Built-in blocker</span><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+          <button class="tab" role="tab" type="button" id="tab-fp" aria-controls="panel-fp" aria-selected="false" tabindex="-1">
+            <span>Fingerprint shield</span><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+          <button class="tab" role="tab" type="button" id="tab-vault" aria-controls="panel-vault" aria-selected="false" tabindex="-1">
+            <span>Sealed vault</span><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+
+        <div class="tabs__panels">
+
+          <article class="panel" role="tabpanel" id="panel-system" aria-labelledby="tab-system" tabindex="0">
+            <div class="panel__text">
+              <h3 class="display display--sm">Block it before it loads.</h3>
+              <p>Pluton Shield runs a local proxy and sets it as your Windows proxy. Every request is checked by the engine, then blocked, swapped for a harmless stand-in, or stripped of its tracking parameters. Leftover ad slots are hidden on the page.</p>
+              <a class="link-arrow" href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener">Pluton Shield on GitHub <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="panel__visual panel__visual--hand">
+              <img src="assets/shield-hand.png" width="1000" height="1000" loading="lazy" alt="A white open hand held up like a stop sign, on black.">
+            </div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="panel-blocker" aria-labelledby="tab-blocker" tabindex="0" hidden>
+            <div class="panel__text">
+              <h3 class="display display--sm">A browser that blocks by default.</h3>
+              <p>NEAT carries its own blocker: adblock-rust fed by uBlock Origin lists. It stops requests and popups, hides what is left, runs scriptlets before the page’s own scripts, and gives you a switch for each site.</p>
+              <a class="link-arrow" href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">NEAT on GitHub <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="panel__visual panel__visual--neat">
+              <svg class="neat-big" viewBox="0 0 64 64" role="img" aria-label="The NEAT mark: a circle with a stepped corner cut out"><use href="#neat-mark"/></svg>
+              <i class="deco deco--1"></i><i class="deco deco--2"></i><i class="deco deco--3"></i>
+            </div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="panel-fp" aria-labelledby="tab-fp" tabindex="0" hidden>
+            <div class="panel__text">
+              <h3 class="display display--sm">Look different to every site.</h3>
+              <p>NEAT nudges what a page can read, such as canvas, audio and hardware details. Values stay steady on one site, differ on the next, and change again after a restart, so two sites can’t match their visitor.</p>
+              <a class="link-arrow" href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">See how it works <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="panel__visual panel__visual--fp">
+              <div class="fp" data-fp>
+                <figure class="fp__item"><div class="fp__grid" data-seed="11"></div><figcaption>example.com</figcaption></figure>
+                <figure class="fp__item"><div class="fp__grid" data-seed="27"></div><figcaption>another.org</figcaption></figure>
+                <figure class="fp__item"><div class="fp__grid" data-seed="43" data-roll></div><figcaption>example.com, after restart</figcaption></figure>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel" role="tabpanel" id="panel-vault" aria-labelledby="tab-vault" tabindex="0" hidden>
+            <div class="panel__text">
+              <h3 class="display display--sm">Sealed on your machine.</h3>
+              <p>Logins, one-time codes, cards and identities are sealed with AES-256-GCM. The key is wrapped for your Windows user, and showing or copying a password asks for Windows Hello or your NEAT password.</p>
+              <a class="link-arrow" href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">NEAT on GitHub <svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="panel__visual panel__visual--vault">
+              <svg class="padlock" viewBox="0 0 12 14" role="img" aria-label="A pixel-art padlock" shape-rendering="crispEdges">
+                <path fill="url(#padGrad)" d="M4 0h4v1h-4zM3 1h6v1h-6zM2 2h3v1h-3zM7 2h3v1h-3zM2 3h2v1h-2zM8 3h2v1h-2zM2 4h2v1h-2zM8 4h2v1h-2zM2 5h2v1h-2zM8 5h2v1h-2zM0 6h12v1h-12zM0 7h12v1h-12zM0 8h4v1h-4zM8 8h4v1h-4zM0 9h4v1h-4zM8 9h4v1h-4zM0 10h5v1h-5zM7 10h5v1h-5zM0 11h5v1h-5zM7 11h5v1h-5zM0 12h12v1h-12zM0 13h12v1h-12z"/>
+              </svg>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTS ============ -->
+    <section class="work" id="products" aria-labelledby="work-title">
+      <div class="work__head">
+        <h2 class="display display--md" id="work-title">Two products. One idea.</h2>
+        <a class="btn" href="https://github.com/plutonlabs" target="_blank" rel="noopener">All projects on GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-chev"/></svg></a>
+      </div>
+
+      <div class="tabs tabs--work" data-tabs>
+        <div class="tabs__list tabs__list--work" role="tablist" aria-orientation="vertical" aria-label="Products">
+          <button class="tab tab--prod" role="tab" type="button" id="tab-shield" aria-controls="panel-shield" aria-selected="true">
+            <svg class="tab__ico" width="20" height="20" aria-hidden="true"><use href="#i-stair"/></svg>
+            <span>Pluton Shield</span>
+          </button>
+          <button class="tab tab--prod" role="tab" type="button" id="tab-neat" aria-controls="panel-neat" aria-selected="false" tabindex="-1">
+            <svg class="tab__ico" width="20" height="20" aria-hidden="true"><use href="#neat-mark"/></svg>
+            <span>NEAT Browser</span>
+          </button>
+        </div>
+
+        <div class="tabs__panels">
+          <!-- Shield -->
+          <div class="cards" role="tabpanel" id="panel-shield" aria-labelledby="tab-shield" tabindex="0">
+            <div class="cards__col">
+              <article class="card">
+                <span class="tag tag--live">Available · v0.3</span>
+                <p class="card__text">Early release for Windows, x64 and ARM64. The Windows UI hasn’t been fully tested yet.</p>
+              </article>
+              <article class="card">
+                <svg class="card__ico" width="28" height="28" aria-hidden="true"><use href="#i-stair"/></svg>
+                <p class="card__text">Blocks ads and trackers system-wide through a local HTTPS proxy, with your own rules and a one-click protection check.</p>
+              </article>
+            </div>
+            <article class="card card--cta">
+              <p class="card__big">Put Shield on your PC.</p>
+              <p class="card__small">Installs for your user only. No admin rights needed.</p>
+              <div class="card__actions">
+                <a class="btn btn--solid" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download for Windows <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn--dark" href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener"><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
+              </div>
+            </article>
+          </div>
+
+          <!-- NEAT -->
+          <div class="cards" role="tabpanel" id="panel-neat" aria-labelledby="tab-neat" tabindex="0" hidden>
+            <div class="cards__col">
+              <article class="card">
+                <span class="tag tag--soon">Not released yet</span>
+                <p class="card__text">NEAT is still being built in the open. There is no download yet.</p>
+              </article>
+              <article class="card">
+                <img class="card__img" src="assets/neat-icon.png" width="40" height="40" alt="">
+                <p class="card__text">A lightweight Windows browser on WinUI 3 and WebView2, with vertical tabs, a built-in blocker, fingerprint protection and a password vault.</p>
+              </article>
+            </div>
+            <article class="card card--cta">
+              <p class="card__big">Follow the build.</p>
+              <p class="card__small">NEAT is open source under GPL-3.0.</p>
+              <div class="card__actions">
+                <a class="btn btn--solid" href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener"><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg> View on GitHub <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GO DEEPER ============ -->
+    <section class="deeper" id="open-source" aria-labelledby="deeper-title">
+      <div class="deeper__head">
+        <h2 class="display display--md" id="deeper-title">Go deeper.</h2>
+      </div>
+      <div class="deeper__row">
+        <a class="dcard" href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener">
+          <svg class="dcard__ico" width="24" height="24" aria-hidden="true"><use href="#i-stair"/></svg>
+          <span class="dcard__title">Pluton Shield</span>
+          <span class="dcard__text">Read the proxy, the certificate handling and the tests behind the system-wide blocker.</span>
+        </a>
+        <a class="dcard" href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">
+          <svg class="dcard__ico" width="24" height="24" aria-hidden="true"><use href="#neat-mark"/></svg>
+          <span class="dcard__title">NEAT Browser</span>
+          <span class="dcard__text">Follow the browser, its vault and its fingerprint shield as they take shape.</span>
+        </a>
+        <a class="dcard" href="https://github.com/plutonlabs/neat-filters" target="_blank" rel="noopener">
+          <svg class="dcard__ico" width="24" height="24" aria-hidden="true"><use href="#i-github"/></svg>
+          <span class="dcard__title">Filters &amp; engine</span>
+          <span class="dcard__text">neat-adblock wraps adblock-rust. neat-filters rebuilds the lists every six hours.</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__col">
+        <h2 class="footer__label">Products</h2>
+        <ul>
+          <li><a href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener">Pluton Shield</a></li>
+          <li><a href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download Shield</a></li>
+          <li><a href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">NEAT Browser <span class="soon">soon</span></a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__label">Open source</h2>
+        <ul>
+          <li><a href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener">shield</a></li>
+          <li><a href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">neat</a></li>
+          <li><a href="https://github.com/plutonlabs/neat-adblock" target="_blank" rel="noopener">neat-adblock</a></li>
+          <li><a href="https://github.com/plutonlabs/neat-filters" target="_blank" rel="noopener">neat-filters</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h2 class="footer__label">Company</h2>
+        <ul>
+          <li><a href="#top">The Pluton Company</a></li>
+          <li><a href="https://github.com/plutonlabs" target="_blank" rel="noopener">plutonlabs on GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__meta">
+      <div class="footer__social">
+        <a href="https://github.com/plutonlabs" target="_blank" rel="noopener" aria-label="plutonlabs on GitHub">
+          <svg width="26" height="26" aria-hidden="true"><use href="#i-github"/></svg>
+        </a>
+      </div>
+      <div class="footer__get">
+        <span class="footer__label">Get Pluton Shield</span>
+        <a class="btn btn--solid" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download for Windows <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+
+    <div class="footer__brand">
+      <p class="footer__copy">The Pluton Company © <span data-year>2026</span></p>
+
+      <div class="wordmark">
+        <img src="assets/pluton-wordmark.png" width="900" height="900" loading="lazy" alt="the PLUTON COMPANY">
+      </div>
+
+      <div class="theme" role="group" aria-label="Color theme">
+        <button type="button" data-theme-set="system" aria-pressed="true" aria-label="System theme"><svg width="16" height="16" aria-hidden="true"><use href="#i-monitor"/></svg></button>
+        <button type="button" data-theme-set="light" aria-pressed="false" aria-label="Light theme"><svg width="16" height="16" aria-hidden="true"><use href="#i-sun"/></svg></button>
+        <button type="button" data-theme-set="dark" aria-pressed="false" aria-label="Dark theme"><svg width="16" height="16" aria-hidden="true"><use href="#i-moon"/></svg></button>
+      </div>
+    </div>
+
+    <div class="band" aria-hidden="true">
+      <i class="band__s band__s--1"></i>
+      <i class="band__s band__s--2"></i>
+      <i class="band__s band__s--3"></i>
+      <i class="band__s band__s--4"></i>
+      <div class="mv mv--w" data-mv="w"></div>
+    </div>
+  </footer>
+
+</body>
+</html>
