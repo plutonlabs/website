@@ -21,6 +21,7 @@
 
   <!-- Runs before first paint so the saved theme is applied without a flash. -->
   <script src="js/app.js"></script>
+  <script src="js/release.js" defer></script>
 </head>
 <body>
 
@@ -74,7 +75,7 @@
 
     <div class="nav__right">
       <a class="nav__cell" href="https://github.com/plutonlabs" target="_blank" rel="noopener">GitHub</a>
-      <a class="nav__cell nav__cell--cta" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download Shield</a>
+      <a class="nav__cell nav__cell--cta" href="download.html#shield">Download Shield</a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
         <span></span><span></span>
       </button>
@@ -109,7 +110,7 @@
         <div class="mv mv--d" data-mv="d"></div>
       </div>
 
-      <a class="pill" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">
+      <a class="pill" href="download.html#shield">
         <span class="pill__icon"><img src="assets/shield-hand.png" width="22" height="22" alt=""></span>
         <span>Pluton Shield is out. Get it for Windows.</span>
         <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-chev"/></svg>
@@ -290,8 +291,8 @@
           <div class="cards" role="tabpanel" id="panel-shield" aria-labelledby="tab-shield" tabindex="0">
             <div class="cards__col">
               <article class="card">
-                <span class="tag tag--live">Available · v0.3</span>
-                <p class="card__text">Early release for Windows, x64 and ARM64. The Windows UI hasn’t been fully tested yet.</p>
+                <span class="tag tag--live">Available · <span data-version>v0.6.0</span></span>
+                <p class="card__text">Windows on x64 and ARM64. Updates arrive inside the app.</p>
               </article>
               <article class="card">
                 <svg class="card__ico" width="28" height="28" aria-hidden="true"><use href="#i-stair"/></svg>
@@ -302,7 +303,7 @@
               <p class="card__big">Put Shield on your PC.</p>
               <p class="card__small">Installs for your user only. No admin rights needed.</p>
               <div class="card__actions">
-                <a class="btn btn--solid" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download for Windows <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn--solid" href="download.html#shield">Download for Windows <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
                 <a class="btn btn--dark" href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener"><svg class="ico" width="16" height="16" aria-hidden="true"><use href="#i-github"/></svg> GitHub</a>
               </div>
             </article>
@@ -312,7 +313,7 @@
           <div class="cards" role="tabpanel" id="panel-neat" aria-labelledby="tab-neat" tabindex="0" hidden>
             <div class="cards__col">
               <article class="card">
-                <span class="tag tag--soon">Not released yet</span>
+                <span class="tag tag--soon">Coming soon</span>
                 <p class="card__text">NEAT is still being built in the open. There is no download yet.</p>
               </article>
               <article class="card">
@@ -365,7 +366,7 @@
         <h2 class="footer__label">Products</h2>
         <ul>
           <li><a href="https://github.com/plutonlabs/shield" target="_blank" rel="noopener">Pluton Shield</a></li>
-          <li><a href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download Shield</a></li>
+          <li><a href="download.html#shield">Download Shield</a></li>
           <li><a href="https://github.com/plutonlabs/neat" target="_blank" rel="noopener">NEAT Browser <span class="soon">soon</span></a></li>
         </ul>
       </div>
@@ -395,7 +396,7 @@
       </div>
       <div class="footer__get">
         <span class="footer__label">Get Pluton Shield</span>
-        <a class="btn btn--solid" href="https://github.com/plutonlabs/shield/releases/latest" target="_blank" rel="noopener">Download for Windows <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--solid" href="download.html#shield">Download for Windows <svg class="ico" width="14" height="14" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </div>
     </div>
 
